@@ -30,7 +30,9 @@ function onUserSubmit(evt) {
 }
 
 function textUserReturn() {
-    const userText = JSON.parse(localStorage.getItem('feedback-form-state'));
+  const userText = JSON.parse(localStorage.getItem('feedback-form-state'));
+  if (userText) {
     refs.inputArea.value = userText.email ?? '';
     refs.textArea.value = userText.message ?? '';
+  }
 }
