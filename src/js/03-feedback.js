@@ -23,14 +23,13 @@ function onUserDate(evt) {
 
 function onUserSubmit(evt) {
     evt.preventDefault();
-    console.log('email: ',refs.inputArea.value);
-    console.log('message :', refs.textArea.value);
+    console.log('data user ',obj);
     evt.target.reset();
     localStorage.removeItem(STORAGE_KEY);
 }
 
 function textUserReturn() {
-  const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (userText) {
       refs.inputArea.value = userText.email;
       refs.textArea.value = userText.message;
