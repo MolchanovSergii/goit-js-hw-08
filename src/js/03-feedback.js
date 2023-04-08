@@ -30,9 +30,9 @@ function onUserSubmit(evt) {
 }
 
 function textUserReturn() {
-    const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (userText) {
+  const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (userText) {
       refs.inputArea.value = userText.email;
       refs.textArea.value = userText.message;
-    }
+  }
 }
