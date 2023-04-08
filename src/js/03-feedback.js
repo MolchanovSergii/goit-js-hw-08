@@ -32,7 +32,6 @@ function onUserSubmit(evt) {
 
 function textUserReturn() {
     const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    console.log(userText)
   if (userText) {
       refs.input.value = userText.email;
       refs.text.value = userText.message;
