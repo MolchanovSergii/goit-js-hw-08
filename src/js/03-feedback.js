@@ -4,8 +4,8 @@ const STORAGE_KEY = 'feedback-form-state';
 
 const refs = {
     form: document.querySelector('.feedback-form '),
-    inputArea: document.querySelector('.feedback-form input'),
-    textArea: document.querySelector('.feedback-form textarea'),
+    input: document.querySelector('.feedback-form input'),
+    text: document.querySelector('.feedback-form textarea'),
     btn: document.querySelector('.feedback-form button'),
 };
 
@@ -17,8 +17,10 @@ textUserReturn();
 const obj = {};
 
 function onUserDate(evt) {
-   obj[evt.target.name] = evt.target.value;
-   localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+    // obj[evt.target.name] = evt.target.value;
+    obj.email = refs.form.email.value;
+    obj.message = refs.form.message.value;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 }
 
 function onUserSubmit(evt) {
@@ -30,8 +32,9 @@ function onUserSubmit(evt) {
 
 function textUserReturn() {
     const userText = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    console.log(userText)
   if (userText) {
-      refs.inputArea.value = userText.email;
-      refs.textArea.value = userText.message;
+      refs.input.value = userText.email;
+      refs.text.value = userText.message;
   }
 }
